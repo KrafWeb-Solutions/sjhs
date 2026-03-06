@@ -1,0 +1,47 @@
+/* Custom SJHS Styles */
+:root {
+    --sjhs-main: #2310ac;
+    --sjhs-secondary: #1e6df6;
+}
+
+body {
+    font-family: 'Inter', sans-serif;
+    scroll-behavior: smooth;
+    color: #333;
+}
+
+.bg-sjhs-main { background-color: var(--sjhs-main); }
+.text-sjhs-main { color: var(--sjhs-main); }
+.bg-sjhs-secondary { background-color: var(--sjhs-secondary); }
+
+/* Navigation Glassmorphism */
+nav {
+    backdrop-filter: blur(8px);
+    -webkit-backdrop-filter: blur(8px);
+}
+
+/* Hover Animations */
+.hover-lift {
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.hover-lift:hover {
+    transform: translateY(-8px);
+    box-shadow: 0 15px 30px rgba(0, 0, 0, 0.1);
+    border-color: var(--sjhs-secondary) !important;
+}
+
+/* Carousel Animation */
+.carousel-item {
+    display: none;
+    animation: fadeImg 1s ease-in-out;
+}
+
+.carousel-item.active {
+    display: block;
+}
+
+@keyframes fadeImg {
+    from { opacity: 0; }
+    to { opacity: 1; }
+}
