@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>SJHS | Home</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link rel="stylesheet" href="style.css">
+    <script src="https://unpkg.com/lucide@latest"></script>
+</head>
+<body>
+    <nav class="sticky top-0 z-50 bg-white/90 shadow-sm py-4 px-12 flex justify-between items-center">
+        <div class="flex items-center gap-2">
+            <span class="font-bold text-2xl text-sjhs-main">SJHS</span>
+        </div>
+        <ul class="hidden md:flex space-x-8 font-semibold text-gray-600">
+            <li><a href="index.html" class="text-sjhs-main">Home</a></li>
+            <li><a href="about.html" class="hover:text-sjhs-main">About Us</a></li>
+            <li><a href="academics.html" class="hover:text-sjhs-main">Academics</a></li>
+            <li><a href="contact.html" class="hover:text-sjhs-main">Contact</a></li>
+        </ul>
+        <a href="contact.html" class="bg-sjhs-secondary text-white px-6 py-2 rounded-full font-bold shadow-md">Admissions</a>
+    </nav>
+
+    <header class="relative h-[80vh] flex items-center justify-center text-white text-center">
+        <div id="carousel" class="absolute inset-0 -z-10 bg-black">
+            <img src="https://images.unsplash.com/photo-1523050854058-8df90110c9f1?q=80&w=1920" class="carousel-item active w-full h-full object-cover opacity-50">
+            <img src="https://images.unsplash.com/photo-1541339907198-e08756ebafe3?q=80&w=1920" class="carousel-item w-full h-full object-cover opacity-50">
+        </div>
+        <div class="px-6">
+            <h1 class="text-5xl md:text-7xl font-extrabold mb-4">Welcome to SJHS</h1>
+            <p class="text-xl mb-8">Building Excellence, Shaping Futures.</p>
+            <div class="flex gap-4 justify-center">
+                <a href="contact.html" class="bg-sjhs-main px-8 py-3 rounded-lg font-bold hover-lift">Apply Today</a>
+                <a href="about.html" class="bg-white text-sjhs-main px-8 py-3 rounded-lg font-bold hover-lift">Learn More</a>
+            </div>
+        </div>
+    </header>
+
+    <script>
+        lucide.createIcons();
+        const slides = document.querySelectorAll('.carousel-item');
+        let current = 0;
+        setInterval(() => {
+            slides[current].classList.remove('active');
+            current = (current + 1) % slides.length;
+            slides[current].classList.add('active');
+        }, 5000);
+    </script>
+</body>
+</html>
